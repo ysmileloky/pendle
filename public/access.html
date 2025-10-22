@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendle 面板访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        .success-badge {
+            background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        .url-box {
+            background: #f8f9fa;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .url-box h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .url-link {
+            font-size: 1.8em;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        .url-link:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #667eea;
+            border-radius: 5px;
+        }
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .warning h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: transform 0.3s;
+            font-size: 1.1em;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .status-dot {
+            width: 15px;
+            height: 15px;
+            background: #00b09b;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 部署成功！</h1>
+        <p class="subtitle">你的 Pendle DeFi 数据追踪面板已上线</p>
+
+        <div class="success-badge">
+            ✅ 应用已成功部署到 Bandwagon Host
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            <span>服务器运行中 | PM2 托管</span>
+        </div>
+
+        <!-- 主要访问地址 -->
+        <div class="url-box">
+            <h2>📍 访问你的数据面板</h2>
+            <a href="http://173.242.118.226:3000" class="url-link" target="_blank">
+                http://173.242.118.226:3000
+            </a>
+            <button class="copy-btn" onclick="copyUrl('http://173.242.118.226:3000')">
+                📋 复制地址
+            </button>
+        </div>
+
+        <!-- 文档访问地址 -->
+        <div class="url-box">
+            <h2>📖 项目文档</h2>
+            <a href="http://173.242.118.226:3000/docs.html" class="url-link" target="_blank">
+                http://173.242.118.226:3000/docs.html
+            </a>
+            <button class="copy-btn" onclick="copyUrl('http://173.242.118.226:3000/docs.html')">
+                📋 复制地址
+            </button>
+        </div>
+
+        <!-- 重要提示 -->
+        <div class="warning">
+            <h3>⚠️ 重要：开放防火墙端口</h3>
+            <p style="margin-top: 10px;">如果无法访问，需要在 Bandwagon Host 控制面板开放 3000 端口：</p>
+            <ol style="margin-top: 10px; margin-left: 20px;">
+                <li>登录 <a href="https://bwh89.net/" target="_blank">https://bwh89.net/</a></li>
+                <li>进入 KiwiVM Control Panel</li>
+                <li>找到 Firewall 设置</li>
+                <li>添加规则：端口 3000，协议 TCP，动作 ALLOW</li>
+                <li>保存并应用</li>
+            </ol>
+        </div>
+
+        <!-- 功能介绍 -->
+        <h2 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">✨ 面板功能</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div style="font-size: 2em; margin-bottom: 10px;">📊</div>
+                <div>实时数据</div>
+            </div>
+            <div class="feature-item">
+                <div style="font-size: 2em; margin-bottom: 10px;">💰</div>
+                <div>多维度APY</div>
+            </div>
+            <div class="feature-item">
+                <div style="font-size: 2em; margin-bottom: 10px;">📈</div>
+                <div>交互图表</div>
+            </div>
+            <div class="feature-item">
+                <div style="font-size: 2em; margin-bottom: 10px;">🌐</div>
+                <div>多链支持</div>
+            </div>
+        </div>
+
+        <!-- 快速开始 -->
+        <h2 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">🚀 快速开始</h2>
+
+        <div class="step">
+            <h3>步骤 1: 访问面板</h3>
+            <p>在 Mac 浏览器中打开上面的链接，即可看到数据面板</p>
+        </div>
+
+        <div class="step">
+            <h3>步骤 2: 探索功能</h3>
+            <p>• 查看4个关键统计指标<br>
+               • 点击市场卡片查看历史趋势<br>
+               • 切换网格/表格视图<br>
+               • 在表格中点击列标题排序</p>
+        </div>
+
+        <div class="step">
+            <h3>步骤 3: 阅读文档</h3>
+            <p>点击右上角"项目文档"按钮或访问文档地址了解详细功能</p>
+        </div>
+
+        <!-- 服务器信息 -->
+        <h2 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">🖥️ 服务器信息</h2>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+            <p><strong>公网IP:</strong> 173.242.118.226</p>
+            <p><strong>应用端口:</strong> 3000</p>
+            <p><strong>进程管理:</strong> PM2</p>
+            <p><strong>状态:</strong> ✅ Online</p>
+            <p><strong>开机自启:</strong> ✅ 已配置</p>
+        </div>
+
+        <!-- 下一步 -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="http://173.242.118.226:3000" class="btn" target="_blank">
+                🚀 立即访问数据面板
+            </a>
+            <a href="http://173.242.118.226:3000/docs.html" class="btn" target="_blank">
+                📖 查看项目文档
+            </a>
+        </div>
+
+        <p style="text-align: center; color: #999; margin-top: 30px; font-size: 0.9em;">
+            提示：如果链接无法打开，请先在 Bandwagon 控制面板开放 3000 端口
+        </p>
+    </div>
+
+    <script>
+        function copyUrl(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('✅ 地址已复制到剪贴板！');
+            });
+        }
+    </script>
+</body>
+</html>
