@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Market, MarketOverview } from '@/types/pendle';
 import { pendleAPI } from '@/lib/services/pendle';
 import StatCard from '@/components/StatCard';
@@ -8,7 +9,7 @@ import MarketCard from '@/components/MarketCard';
 import MarketTable from '@/components/MarketTable';
 import APYChart from '@/components/APYChart';
 import TVLChart from '@/components/TVLChart';
-import { TrendingUp, DollarSign, Activity, BarChart3, Grid3X3, TableIcon } from 'lucide-react';
+import { TrendingUp, DollarSign, Activity, BarChart3, Grid3X3, TableIcon, BookOpen } from 'lucide-react';
 import { formatLargeNumber, formatPercentage } from '@/lib/utils/formatters';
 
 export default function Dashboard() {
@@ -77,6 +78,14 @@ export default function Dashboard() {
               <p className="text-gray-600 mt-1">实时追踪 Pendle 协议市场数据</p>
             </div>
             <div className="flex items-center space-x-2">
+              <Link
+                href="/docs.html"
+                className="flex items-center space-x-2 px-4 py-2 bg-purple-100 text-purple-600 rounded-lg hover:bg-purple-200 transition-colors"
+                target="_blank"
+              >
+                <BookOpen className="w-5 h-5" />
+                <span className="font-semibold">项目文档</span>
+              </Link>
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-lg ${viewMode === 'grid' ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'}`}
