@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendle DeFi 数据追踪面板 - 演示版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- 头部 -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex items-center justify-between flex-wrap">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Pendle 数据面板</h1>
+                    <p class="text-gray-600 mt-1">实时追踪 Pendle 协议市场数据（演示版）</p>
+                </div>
+                <div class="flex items-center space-x-2 mt-4 sm:mt-0">
+                    <a href="docs.html" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-purple-100 text-purple-600 rounded-lg hover:bg-purple-200 transition-colors">
+                        <span class="font-semibold">📖 项目文档</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 统计卡片 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 fade-in">
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-gray-600 mb-1">总锁定价值 (TVL)</p>
+                        <p class="text-2xl font-bold text-gray-900">$546.00M</p>
+                        <p class="text-xs text-gray-500 mt-1">所有市场的总锁定价值</p>
+                    </div>
+                    <div class="ml-4 bg-blue-100 rounded-full p-3">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-gray-600 mb-1">24小时交易量</p>
+                        <p class="text-2xl font-bold text-gray-900">$24.28M</p>
+                        <p class="text-xs text-gray-500 mt-1">过去24小时的交易量</p>
+                    </div>
+                    <div class="ml-4 bg-blue-100 rounded-full p-3">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-gray-600 mb-1">活跃市场</p>
+                        <p class="text-2xl font-bold text-gray-900">5</p>
+                        <p class="text-xs text-gray-500 mt-1">当前活跃的市场数量</p>
+                    </div>
+                    <div class="ml-4 bg-blue-100 rounded-full p-3">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-gray-600 mb-1">平均 APY</p>
+                        <p class="text-2xl font-bold text-gray-900">12.66%</p>
+                        <p class="text-xs text-gray-500 mt-1">所有市场的平均固定APY</p>
+                    </div>
+                    <div class="ml-4 bg-blue-100 rounded-full p-3">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 市场列表 -->
+        <div class="mb-4">
+            <h2 class="text-2xl font-bold text-gray-900 mb-1">市场列表</h2>
+            <p class="text-gray-600">Pendle 协议活跃市场数据</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+            <!-- 市场1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all border border-gray-200 hover:border-blue-400">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900">PT-eETH</h3>
+                        <p class="text-sm text-gray-600">eETH</p>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Ethereum</span>
+                </div>
+                <div class="space-y-3 mb-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">固定APY</span>
+                        <span class="text-lg font-bold text-green-600">12.50%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">浮动APY</span>
+                        <span class="text-sm font-semibold text-gray-700">3.20%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">Long Yield APY</span>
+                        <span class="text-sm font-semibold text-purple-600">15.80%</span>
+                    </div>
+                </div>
+                <div class="border-t border-gray-200 my-4"></div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">TVL</span>
+                        <span class="text-sm font-semibold text-gray-900">$125.00M</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">24h交易量</span>
+                        <span class="text-sm font-semibold text-gray-900">$5.60M</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 市场2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all border border-gray-200 hover:border-blue-400">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900">PT-GLP</h3>
+                        <p class="text-sm text-gray-600">GLP</p>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Arbitrum</span>
+                </div>
+                <div class="space-y-3 mb-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">固定APY</span>
+                        <span class="text-lg font-bold text-green-600">18.30%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">浮动APY</span>
+                        <span class="text-sm font-semibold text-gray-700">8.50%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">Long Yield APY</span>
+                        <span class="text-sm font-semibold text-purple-600">22.10%</span>
+                    </div>
+                </div>
+                <div class="border-t border-gray-200 my-4"></div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">TVL</span>
+                        <span class="text-sm font-semibold text-gray-900">$45.00M</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">24h交易量</span>
+                        <span class="text-sm font-semibold text-gray-900">$2.30M</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 市场3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all border border-gray-200 hover:border-blue-400">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900">PT-stETH</h3>
+                        <p class="text-sm text-gray-600">stETH</p>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Ethereum</span>
+                </div>
+                <div class="space-y-3 mb-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">固定APY</span>
+                        <span class="text-lg font-bold text-yellow-600">8.70%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">浮动APY</span>
+                        <span class="text-sm font-semibold text-gray-700">3.50%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">Long Yield APY</span>
+                        <span class="text-sm font-semibold text-purple-600">11.20%</span>
+                    </div>
+                </div>
+                <div class="border-t border-gray-200 my-4"></div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">TVL</span>
+                        <span class="text-sm font-semibold text-gray-900">$280.00M</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-600">24h交易量</span>
+                        <span class="text-sm font-semibold text-gray-900">$12.00M</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 说明 -->
+        <div class="mt-12 bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-blue-900 mb-2">💡 关于这个演示版本</h3>
+            <p class="text-blue-800 mb-3">这是一个静态HTML演示版本，展示了Pendle数据面板的界面和功能。</p>
+            <p class="text-blue-800 mb-3"><strong>完整版本功能：</strong></p>
+            <ul class="list-disc list-inside text-blue-800 space-y-1 mb-4">
+                <li>实时数据更新和API集成</li>
+                <li>交互式图表（APY和TVL历史趋势）</li>
+                <li>可点击的市场卡片查看详情</li>
+                <li>表格视图和卡片视图切换</li>
+                <li>智能排序和筛选功能</li>
+            </ul>
+            <a href="docs.html" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                查看完整项目文档 →
+            </a>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="text-center text-gray-600">
+                <p>Pendle DeFi 数据追踪面板 - 演示版</p>
+                <p class="text-sm mt-1">Built with Next.js, TypeScript, and Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

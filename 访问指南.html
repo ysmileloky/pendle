@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendle 项目访问指南</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .url-box {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.3em;
+            text-align: center;
+            border: 3px solid #667eea;
+        }
+        .url-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .url-box a:hover {
+            color: #764ba2;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #667eea;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        code {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Pendle 项目访问指南</h1>
+        
+        <div class="success">
+            <h3>✅ 服务器已成功启动！</h3>
+            <p>你的 Pendle DeFi 数据追踪面板正在运行中。</p>
+        </div>
+
+        <h2>📍 方式一：网络地址访问（推荐）</h2>
+        <p>由于你是在远程服务器上运行项目，请使用以下网络地址：</p>
+        
+        <div class="url-box">
+            <a href="http://21.0.0.74:3000" target="_blank">
+                http://21.0.0.74:3000
+            </a>
+        </div>
+        
+        <div class="step">
+            <strong>操作步骤：</strong><br>
+            1. 点击上面的蓝色链接<br>
+            2. 或复制地址到浏览器地址栏<br>
+            3. 按回车键访问
+        </div>
+
+        <h2>📖 查看项目文档</h2>
+        <div class="url-box">
+            <a href="http://21.0.0.74:3000/docs.html" target="_blank">
+                http://21.0.0.74:3000/docs.html
+            </a>
+        </div>
+
+        <h2>❓ 如果网络地址无法访问</h2>
+        
+        <div class="warning">
+            <strong>可能的原因：</strong>
+            <ul>
+                <li>你的 Mac 和服务器不在同一个网络</li>
+                <li>服务器防火墙阻止了访问</li>
+                <li>需要使用 VPN 或端口转发</li>
+            </ul>
+        </div>
+
+        <h2>🌐 方式二：部署到在线平台</h2>
+        <p>如果上述方法都不行，可以将项目部署到 Vercel（免费），获得一个公开的网址：</p>
+        
+        <div class="step">
+            <strong>部署到 Vercel：</strong><br>
+            1. 访问 <a href="https://vercel.com" target="_blank">vercel.com</a><br>
+            2. 使用 GitHub 登录<br>
+            3. 导入你的 pendle 项目<br>
+            4. 点击 Deploy<br>
+            5. 几分钟后获得一个 <code>https://your-app.vercel.app</code> 地址
+        </div>
+
+        <h2>💡 本地开发选项</h2>
+        <p>如果你想在Mac本地运行项目：</p>
+        
+        <div class="step">
+            <strong>步骤：</strong><br>
+            1. 将项目下载到你的 Mac<br>
+            2. 打开终端（Terminal）<br>
+            3. 进入项目目录：<code>cd ~/Downloads/pendle</code><br>
+            4. 安装依赖：<code>npm install</code><br>
+            5. 启动项目：<code>npm run dev</code><br>
+            6. 访问：<code>http://localhost:3000</code>
+        </div>
+
+        <h2>📞 需要帮助？</h2>
+        <p>如果以上方法都无法访问，请告诉我：</p>
+        <ul>
+            <li>你看到了什么错误信息？</li>
+            <li>点击网络地址后发生了什么？</li>
+            <li>你是通过什么方式连接到服务器的？</li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="http://21.0.0.74:3000" class="btn" target="_blank">
+                🚀 立即访问数据面板
+            </a>
+            <a href="http://21.0.0.74:3000/docs.html" class="btn" target="_blank">
+                📖 查看项目文档
+            </a>
+        </div>
+    </div>
+</body>
+</html>
